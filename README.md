@@ -1,2 +1,2 @@
-# ml_model_deployment_1
+# Rule Base Model Deployment on GCP App Engine
 This repository contains the risk score model using flask api deployment on GCP platform

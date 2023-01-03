@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Profile Matching Score Calculator</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('calculate_score')}}"method="post">
+    	<input type="text" name="name" placeholder="Your Full Name" required="required" />
+      <input type="number" name="age" placeholder="Age in Years" req:uired="required" />
+		  <input type="number" name="height_cm" placeholder="Height in cm" required="required" />
+      <input type="number" name="weight_kg" placeholder="Weight in kg" required="required" />
+      <input type="text" name="education" size="40" placeholder="Education - M.Tech/ME/Engineering/BE/Other" req:uired="required" />
+      <input type="text" name="iit_nit" size="25" placeholder="Degree from IIT/NIT - Yes/No" required="required" />
+      <input type="text" name="post_graduation" placeholder="Postgraduate - Yes/No" required="required" />
+      <input type="number" name="avg_degree_percentage" size="50" placeholder="Degree Percentage" required="required" />
+      <input type="text" name="occupation" size="40" placeholder="Occupation - IT/Teacher/Doctor/Engineer" required="required" />
+      <input type="number" name="monthly_salary" placeholder="Monthly salary in INR" required="required" />
+      <input type="text" name="work_from_home" size="25" placeholder="Working from Home - Yes/No" required="required" />
+      <input type="text" name="willing_to_contribute_equally_to_household_expense" size="50" placeholder="Willing to conribute to household expense - Yes/No" required="required" />
+      <input type="text" name="father_occupation" size="60" placeholder="Father's Occupation - Engineer/Doctor/Teacher/Banker/Farmer/Other" req:uired="required" />
+      <input type="text" name="mother_occupation" size="60" placeholder="Mother's Occupation - Engineer/Doctor/Teacher/Housewife/Other" required="required" />
+      <input type="text" name="relocate_to_yavatmal" size="35" placeholder="Willing to relocate to Yavatmal - Yes/No" required="required" />
+      <input type="text" name="willing_to_live_with_inlaws" size="35" placeholder="Willing to Live with Inlaws - Yes/No" required="required" />
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Calculate Score</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>

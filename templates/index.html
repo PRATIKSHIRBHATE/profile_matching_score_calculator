@@ -17,22 +17,41 @@
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('calculate_score')}}"method="post">
+      <h2>Personal Information</h2>
     	<input type="text" name="name" placeholder="Your Full Name" required="required" />
-      <input type="number" name="age" placeholder="Age in Years" req:uired="required" />
+      <h4>Birth Date</h4>
+      <input type="date" name="dob" placeholder="Birth Date" req:uired="required" />
+      <br> <br>
 		  <input type="number" name="height_cm" placeholder="Height in cm" required="required" />
       <input type="number" name="weight_kg" placeholder="Weight in kg" required="required" />
+      <input type="text" name="hobby" placeholder="Your Hobby" required="required" />
+      <br> <br>
+      <h2>Education</h2>
       <input type="text" name="education" size="40" placeholder="Education - M.Tech/ME/Engineering/BE/Other" req:uired="required" />
-      <input type="text" name="iit_nit" size="25" placeholder="Degree from IIT/NIT - Yes/No" required="required" />
+      <input type="text" name="iit_nit" size="25" placeholder="Masters/Degree from IIT/NIT - Yes/No" required="required" />
       <input type="text" name="post_graduation" placeholder="Postgraduate - Yes/No" required="required" />
       <input type="number" name="avg_degree_percentage" size="50" placeholder="Degree Percentage" required="required" />
+      <input type="number" name="grad_year" placeholder="Graduation Year Ex. 2013" required="required" />
+      <input type="number" name="postgrad_year" placeholder="Postgraduation Year" required="required" />
+      <br> <br>
+      <h2>Employment</h2>
       <input type="text" name="occupation" size="40" placeholder="Occupation - IT/Teacher/Doctor/Engineer" required="required" />
+      <input type="number" name="experience" placeholder="Work Experience in Years" required="required" />
       <input type="number" name="monthly_salary" placeholder="Monthly salary in INR" required="required" />
       <input type="text" name="work_from_home" size="25" placeholder="Working from Home - Yes/No" required="required" />
       <input type="text" name="willing_to_contribute_equally_to_household_expense" size="50" placeholder="Willing to conribute to household expense - Yes/No" required="required" />
+      <br> <br>
+      <h2>Family Details</h2>
       <input type="text" name="father_occupation" size="60" placeholder="Father's Occupation - Engineer/Doctor/Teacher/Banker/Farmer/Other" req:uired="required" />
       <input type="text" name="mother_occupation" size="60" placeholder="Mother's Occupation - Engineer/Doctor/Teacher/Housewife/Other" required="required" />
+      <br> <br>
+      <h2>Other Details</h2>
       <input type="text" name="relocate_to_yavatmal" size="35" placeholder="Willing to relocate to Yavatmal - Yes/No" required="required" />
       <input type="text" name="willing_to_live_with_inlaws" size="35" placeholder="Willing to Live with Inlaws - Yes/No" required="required" />
+      <input type="text" name="non_vegiterian" size="35" placeholder="Are you Non-Vegetarian - Yes/No" required="required" />
+      <input type="number" name="sleep_time" size="35" placeholder="What time do you sleep?" required="required" />
+      <input type="number" name="wake_uptime" size="35" placeholder="What time do you wake up?" required="required" />
+      <br> <br>
 
 
 

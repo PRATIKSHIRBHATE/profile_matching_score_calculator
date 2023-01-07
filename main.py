@@ -42,7 +42,7 @@ def calculate_score():
     request_json["wake_uptime"] = float(request_value_list[22])
 
     #request_json = json.dumps(request_json)
-    logging.info(request_json)
+    #logging.info(request_json)
 
     name = request_json.get("name", "Random")
     dob = request_json.get("dob", "yyyy-mm-dd")
@@ -161,7 +161,8 @@ def calculate_score():
     # Return the response to the user
     response = {}
     response["greeting"] = greeting
-    logging.info(response)
+    request_json["total_score"] = total_score
+    # logging.info(response)
     
     # Write the request-response to GCS
     # Create a client for interacting with Cloud Storage

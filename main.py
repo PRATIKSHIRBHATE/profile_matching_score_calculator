@@ -2,7 +2,7 @@ import logging
 import json
 from datetime import datetime
 from flask import Flask, request, jsonify, render_template
-
+from google.cloud import storage
 
 app = Flask(__name__)
 
@@ -162,6 +162,23 @@ def calculate_score():
     response = {}
     response["greeting"] = greeting
     logging.info(response)
+    
+    # Write the request-response to GCS
+    # Create a client for interacting with Cloud Storage
+    client = storage.Client()
+
+    # Select the bucket where you want to store the file
+    bucket = client.bucket('profile-matching-calculator-inputs')
+
+    # Create a new Blob object
+    filename = name + "_" + str(current_date.strftime("%Y-%m-%d"))
+    blob = bucket.blob(f'input_jsons/{filename}.json')
+
+    # Convert the dictionary to a JSON object
+    json_object = json.dumps(request_json)
+
+    # Write the JSON object to the Blob
+    blob.upload_from_string(json_object)
 
     return render_template('index.html', prediction_text='Greetings {}! your profile matching score is {}'.format(name, total_score))
 

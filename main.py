@@ -172,7 +172,7 @@ def calculate_score():
     bucket = client.bucket('profile-matching-calculator-inputs')
 
     # Create a new Blob object
-    filename = name + "_" + str(current_date.strftime("%Y-%m-%d"))
+    filename = name + "_" + str(current_date.strftime("%Y-%m-%d-%H-%M"))
     blob = bucket.blob(f'input_jsons/{filename}.json')
 
     # Convert the dictionary to a JSON object

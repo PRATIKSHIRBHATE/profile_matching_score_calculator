@@ -110,7 +110,7 @@ def calculate_score():
     if weight_kg > 50 and weight_kg <70:
         total_score += 5
 
-    if hobby.lower() in ["reading", "playing chess", "cooking", "chess", "badminton", "swimming"]:
+    if hobby.lower() in ["reading", "playing chess", "cooking", "chess", "badminton", "swimming", "painting"]:
         total_score +=10
     elif hobby.lower() in ["watching tv", "social media", "netflix"]:
         total_score -=10
@@ -136,7 +136,7 @@ def calculate_score():
     if grad_year - birth_year > 22:
         total_score -= 10
 
-    if occupation.lower() in ["it", "software", "job", "engineer", "data scientist"] :
+    if occupation.lower() in ["it", "software", "job", "engineer", "data scientist", "software engineer"] :
         total_score += 5
 
     ideal_work_experience = current_year - grad_year - 2 # 2 for postgradution
